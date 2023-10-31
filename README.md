@@ -15,9 +15,12 @@ Thay vì 'định lượng' ta sử dụng 'định tính' để chọn hàm $\t
 Vậy hàm $\theta$ cần tìm là:
 $$\theta(\mathbf{w^T_i x})=e^{\mathbf{w^T_i x}}\div \sum_{j=1}^{C} e^{\mathbf{w^T_j x}}, ~~ \forall i = 1, 2, \dots, C$$
 Lúc này ta có thể giả sử rằng:
-$$P(\mathbf{y_i}|\mathbf{x_i};\mathbf{W})=\sum_{j=1}^C a_j^{y_{ij}},~~a_j = \theta(\mathbf{w^T_j x_i})$$
+$$P(\mathbf{y_i}|\mathbf{x_i};\mathbf{W})=\sum_{j=1}^C a_{ji}^{y_{ji}},~~a_{ji} = \theta(\mathbf{w^T_j x_i})$$
 Xét toàn bộ dữ liệu với $\mathbf{X=(x_1,x_2,\dots,x_n)}$ và $\mathbf{Y=(y_1,y_2,\dots,y_n)},$ chúng ta cần tìm $\mathbf{W}$ để cho biểu thức sau đạt giá trị lớn nhất:  
 $$P(\mathbf{Y}|\mathbf{X}; \mathbf{W})$$
 Giả sử rằng các điểm dữ liệu là ngẫu nhiên độc và lập với nhau, ta có thể viết:
 
-$$P(\mathbf{y}|\mathbf{X}; \mathbf{w}) =\prod_{i=1}^n P(y_i| \mathbf{x}_i; \mathbf{w}) = \prod\_{i=1}^n z_i^{y_i}(1 - z_i)^{1- y_i} $$  
+$$P(\mathbf{Y}|\mathbf{X}; \mathbf{W}) =\prod_{i=1}^n P(\mathbf{Y}|\mathbf{X}; \mathbf{W}) = \prod_{i=1}^n \prod_{j=1}^C a_{ji}^{y_{ji}}$$  
+
+Trực tiếp tối ưu hàm số này theo $\mathbf{W}$ không đơn giản, do đó ta sẽ tối ưu hàm số sau:
+$$\mathbf{J(W;X,Y)} = - \sum_{i=1}^n \sum_{j=1}^C y_{ji}log(a_{ji})$$
