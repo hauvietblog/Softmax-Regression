@@ -27,5 +27,5 @@ $$\mathbf{J(W;X,Y)} = -\log P(\mathbf{Y}|\mathbf{X}; \mathbf{W}) =- \sum_{i=1}^n
 
 Hàm mất mát với chỉ một điểm dữ liệu $(\mathbf{x_i},\mathbf{y_i})$ là:  
 
-$$\mathbf{J(W;x_i,y_i)} =- \sum_{j=1}^C y_{ji} \log(a_{ji}) = -\sum_{j=1}^C y_{ji} \mathbf{w}_j^T\mathbf{x}_i + $$
+$$\mathbf{J(W;x_i,y_i)} =- \sum_{j=1}^C y_{ji} \log(a_{ji}) = -\sum_{j=1}^C y_{ji} \mathbf{w}_j^T\mathbf{x}_i + log \left( \sum \right)$$
 
