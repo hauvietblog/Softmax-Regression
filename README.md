@@ -23,4 +23,9 @@ Giả sử rằng các điểm dữ liệu là ngẫu nhiên độc và lập v�
 $$P(\mathbf{Y}|\mathbf{X}; \mathbf{W}) =\prod_{i=1}^n P(\mathbf{Y}|\mathbf{X}; \mathbf{W}) = \prod_{i=1}^n \prod_{j=1}^C a_{ji}^{y_{ji}}$$  
 
 Trực tiếp tối ưu hàm số này theo $\mathbf{W}$ không đơn giản, do đó ta sẽ tối ưu hàm số sau:
-$$\mathbf{J(W;X,Y)} = - \sum_{i=1}^n \sum_{j=1}^C y_{ji}log(a_{ji})$$
+$$\mathbf{J(W;X,Y)} = -\log P(\mathbf{Y}|\mathbf{X}; \mathbf{W}) =- \sum_{i=1}^n \sum_{j=1}^C y_{ji} \log(a_{ji})$$
+
+Hàm mất mát với chỉ một điểm dữ liệu $(\mathbf{x_i},\mathbf{y_i})$ là:  
+
+$$\mathbf{J(W;x_i,y_i)} =- \sum_{j=1}^C y_{ji} \log(a_{ji}) = -\sum_{j=1}^C y_{ji} \mathbf{w}_j^T\mathbf{x}_i + $$
+
