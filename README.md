@@ -40,4 +40,7 @@ Suy ra:
 $$\frac{\partial J_i(\mathbf{W})}{\partial \mathbf{W}} = \mathbf{x}_i \[e\_{1i}, e\_{2i}, \dots, e\_{Ci}\] = \mathbf{x}_i \mathbf{e}_i^T$$
 Vậy công thức cập nhật (theo thuật toán SGD) cho logistic regression là:
 $$\mathbf{W} = \mathbf{W} +\eta \mathbf{x}\_{i}(\mathbf{y}_i - \mathbf{a}_i)^T$$
+### 2. Tài liệu tham khảo
+1. [Softmax Regression - Machine Learning cơ bản](https://machinelearningcoban.com/2017/02/17/softmax/)
+
 
