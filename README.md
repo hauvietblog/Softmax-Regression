@@ -33,7 +33,11 @@ Hàm mất mát với chỉ một điểm dữ liệu $(\mathbf{x}_i,\mathbf{y}_
 $$J(\mathbf{W};\mathbf{x}\_i,\mathbf{y}\_i) =- \sum_{j=1}^C y_{ji} \log(a_{ji}) = -\sum_{j=1}^C y_{ji} \mathbf{w}_j^T\mathbf{x}_i + log \left( \sum\_{k=1}^C \exp(\mathbf{w}_k^T \mathbf{x_i})\right)$$
 
 Đạo hàm của hàm trên là:
-$$\frac{\partial J_i(\mathbf{W})}{\partial \mathbf{W}} = \left[\frac{\partial J_i(\mathbf{W})}{\partial \mathbf{w}_1}, \frac{\partial J_i(\mathbf{W})}{\partial \mathbf{w}_2}, \dots, \frac{\partial J_i(\mathbf{W})}{\partial \mathbf{w}_C}\right]$$  
+$$\frac{\partial J_i(\mathbf{W})}{\partial \mathbf{W}} = \left[\frac{\partial J_i(\mathbf{W})}{\partial \mathbf{w}_1}, \frac{\partial J_i(\mathbf{W})}{\partial \mathbf{w}_2}, \dots, \frac{\partial J_i(\mathbf{W})}{\partial \mathbf{w}_C}\right]$$
 Trong đó: 
-$$\frac{\partial J_i(\mathbf{W})}{\partial \mathbf{w}_j} = -y\_{ji}\mathbf{x}_i + \left(\exp(\mathbf{w}_j^T\mathbf{x}_i) \div \sum\_{k = 1}^C \exp(\mathbf{w}_k^T\mathbf{x}_i)\right) \mathbf{x}_i = -y\_{ji}\mathbf{x}_i + a\_{ji} \mathbf{x}_i = \mathbf{x}_i (a\_{ji} - y\_{ji})$$
+$$\frac{\partial J_i(\mathbf{W})}{\partial \mathbf{w}_j} = -y\_{ji}\mathbf{x}_i + \left(\exp(\mathbf{w}_j^T\mathbf{x}_i) \div \sum\_{k = 1}^C \exp(\mathbf{w}_k^T\mathbf{x}_i)\right) \mathbf{x}_i = -y\_{ji}\mathbf{x}_i + a\_{ji} \mathbf{x}_i = \mathbf{x}_i (a\_{ji} - y\_{ji}) = e\_{ji}$$
+Suy ra: 
+$$\frac{\partial J_i(\mathbf{W})}{\partial \mathbf{W}} = \mathbf{x}_i \[e\_{1i}, e\_{2i}, \dots, e\_{Ci}\] = \mathbf{x}_i \mathbf{e}_i^T$$
+Vậy công thức cập nhật (theo thuật toán SGD) cho logistic regression là:
+$$\mathbf{W} = \mathbf{W} +\eta \mathbf{x}\_{i}(\mathbf{y}_i - \mathbf{a}_i)^T$$
 
