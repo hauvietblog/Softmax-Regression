@@ -7,10 +7,10 @@ $$\begin{aligned} g: \mathbb{R}^m &\to \begin{Bmatrix} 0,1 \end{Bmatrix}^C,C>2 \
 
 Giả sử có n điểm dữ liệu trong không gian m-chiều với mỗi  $i = 1,\dots,n$ thì $g(x_1^{(i)},x_2^{(i)},\dots,x_m^{(i)}) = \mathbf{y}_i$, chúng ta cần tìm một hàm số $f$ sao cho 
 $$f(x_1,x_2,\dots,x_m)=\theta(\mathbf{W}^T \mathbf{x}) = \left(\theta(\mathbf{w}_1^T \mathbf{x}),\theta(\mathbf{w}_2^T \mathbf{x}),\dots,\theta(\mathbf{w}_C^T \mathbf{x})\right) \approx g(x_1,x_2,\dots,x_m)$$    
-Thay vì 'định lượng' ta sử dụng 'định tính' để chọn hàm $\theta$.
+Hàm $\theta$ có các tính chất sau:
   * Các $\mathbf{w}_i^T \mathbf{x}$ phải dương và tổng của chúng bằng 1 . 
   * Giá trị $\mathbf{w}_i^T \mathbf{x}$ càng lớn thì xác suất dữ liệu rơi vào lớp $i$ càng cao, do đó ta cần một hàm đồng biến.
-  * $\mathbf{w}_i^T \mathbf{x}$ có thể nhận giá trị cả âm và dương. Do đó ta cần một hàm số mượt biến $\mathbf{w}_i^T \mathbf{x}$ thành một giá trị dương và đồng biến.
+  * $\mathbf{w}_i^T \mathbf{x}$ có thể nhận giá trị cả âm và dương. Do đó ta cần một hàm số trơn biến $\mathbf{w}_i^T \mathbf{x}$ thành một giá trị dương và đồng biến.
    
 Vậy hàm $\theta$ cần tìm là:
 $$\theta(\mathbf{w}\_i^T \mathbf{x}) = \exp({\mathbf{w}_i^T \mathbf{x}}) \div \sum\_{j=1}^{C} \exp({\mathbf{w}_j^T \mathbf{x}}), ~~ \forall i = 1, 2, \dots, C$$  
