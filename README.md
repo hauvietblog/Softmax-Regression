@@ -15,9 +15,9 @@ f: \mathbb{R}^{m+1} \times \mathbb{R}^{m +1} &\to [0,1]^C \\\\ (\mathbf{x},\math
 chúng ta cần tìm một hàm số $f$ sao cho 
 $$f(\mathbf{x},\mathbf{w})=\theta(\mathbf{W}^T \mathbf{x}) = \left(\theta(\mathbf{w}_1^T \mathbf{x}),\theta(\mathbf{w}_2^T \mathbf{x}),\dots,\theta(\mathbf{w}_C^T \mathbf{x})\right)^T \approx \mathbf{y}$$    
 Hàm $\theta$ có các tính chất sau:
-  * Các $\mathbf{w}_i^T \mathbf{x}$ phải dương và tổng của chúng bằng 1 . 
-  * Giá trị $\mathbf{w}_i^T \mathbf{x}$ càng lớn thì xác suất dữ liệu rơi vào lớp $i$ càng cao, do đó ta cần một hàm đồng biến.
-  * $\mathbf{w}_i^T \mathbf{x}$ có thể nhận giá trị cả âm và dương. Do đó ta cần một hàm số trơn biến $\mathbf{w}_i^T \mathbf{x}$ thành một giá trị dương và đồng biến.
+  * Các $\theta(\mathbf{w}_i^T \mathbf{x})$ phải dương và tổng của chúng bằng 1 . 
+  * Giá trị $\theta(\mathbf{w}_i^T \mathbf{x})$ càng lớn thì xác suất dữ liệu rơi vào lớp $i$ càng cao, do đó ta cần một hàm đồng biến.
+  * $\theta(\mathbf{w}_i^T \mathbf{x})$ có thể nhận giá trị cả âm và dương. Do đó ta cần một hàm số trơn biến $\mathbf{w}_i^T \mathbf{x}$ thành một giá trị dương và đồng biến.
    
 Vậy hàm $\theta$ cần tìm là:
 $$\theta(\mathbf{w}\_i^T \mathbf{x}) = \exp({\mathbf{w}_i^T \mathbf{x}}) \div \sum\_{j=1}^{C} \exp({\mathbf{w}_j^T \mathbf{x}}), ~~ \forall i = 1, 2, \dots, C$$  
